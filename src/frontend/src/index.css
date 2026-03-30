@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 14 40% 5%;
+  --foreground: 205 60% 95%;
+  --card: 205 35% 9%;
+  --card-foreground: 205 60% 95%;
+  --popover: 205 35% 9%;
+  --popover-foreground: 205 60% 95%;
+  --primary: 178 90% 53%;
+  --primary-foreground: 14 40% 5%;
+  --secondary: 205 35% 12%;
+  --secondary-foreground: 205 60% 95%;
+  --muted: 205 25% 15%;
+  --muted-foreground: 205 30% 65%;
+  --accent: 200 90% 55%;
+  --accent-foreground: 14 40% 5%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 195 40% 25%;
+  --input: 205 35% 12%;
+  --ring: 178 90% 53%;
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #071018;
+  color: #eaf4ff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Neon glow utilities */
+.neon-text {
+  color: #20e0d6;
+  text-shadow: 0 0 10px rgba(32, 224, 214, 0.8), 0 0 20px
+    rgba(32, 224, 214, 0.5), 0 0 40px rgba(32, 224, 214, 0.3);
+}
+
+.neon-border {
+  border: 1px solid #2a4a57;
+  box-shadow: 0 0 0 0 rgba(32, 224, 214, 0);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: #20e0d6;
+  box-shadow: 0 0 15px rgba(32, 224, 214, 0.25), inset 0 0 10px
+    rgba(32, 224, 214, 0.05);
+}
+
+.neon-btn-aqua {
+  border: 1.5px solid #20e0d6;
+  color: #20e0d6;
+  background: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(32, 224, 214, 0.2);
+}
+
+.neon-btn-aqua:hover {
+  background: rgba(32, 224, 214, 0.12);
+  box-shadow: 0 0 20px rgba(32, 224, 214, 0.5), 0 0 40px rgba(32, 224, 214, 0.2);
+  transform: translateY(-2px);
+}
+
+.neon-btn-green {
+  border: 1.5px solid #25d366;
+  color: #25d366;
+  background: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(37, 211, 102, 0.2);
+}
+
+.neon-btn-green:hover {
+  background: rgba(37, 211, 102, 0.12);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.2);
+  transform: translateY(-2px);
+}
+
+.neon-btn-filled {
+  background: linear-gradient(135deg, #20e0d6, #18b6ff);
+  color: #071018;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(32, 224, 214, 0.35);
+}
+
+.neon-btn-filled:hover {
+  box-shadow: 0 6px 30px rgba(32, 224, 214, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Fade-in-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up-delay-1 {
+  transition-delay: 0.1s;
+}
+.fade-up-delay-2 {
+  transition-delay: 0.2s;
+}
+.fade-up-delay-3 {
+  transition-delay: 0.3s;
+}
+.fade-up-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* Gallery hover */
+.gallery-tile {
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.gallery-tile img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-tile:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-tile:hover {
+  box-shadow: 0 0 20px rgba(32, 224, 214, 0.4);
+  outline: 1.5px solid rgba(32, 224, 214, 0.5);
+}
+
+/* Card lift */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Aqua gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #20e0d6 0%, #18b6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section header */
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #20e0d6, #18b6ff);
+  border-radius: 9999px;
+  margin: 12px auto 0;
+  box-shadow: 0 0 10px rgba(32, 224, 214, 0.6);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071018;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a4a57;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #20e0d6;
+}
